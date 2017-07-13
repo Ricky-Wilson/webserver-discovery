@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
-""" 
-Probe random web server and print out the title of their index page. 
+"""
+Probe random web server and print out the title of their index page.
 
-:param nhosts: The number of random IPs you want to probe. 
+:param nhosts: The number of random IPs you want to probe.
 """
 
 import os
@@ -31,7 +31,7 @@ def get_title(url):
 def shell(command):
     """
     Execute a shell command and return it's output.
-    
+
     :param command: The command you want to execute
     :returns: A string representation of the commands output
     """
@@ -40,12 +40,12 @@ def shell(command):
 def scan(nhosts):
     """
     Scan for web servers.
-    
-    This function uses namp to find random systems 
+
+    This function uses namp to find random systems
     that are running a service on port 80.
     We will assume that if the system is running a service
     on port 80 it's a web server and generate a URL for it.
-    
+
     :param nhosts:  The number of random IPs you would like to probe
     :returns: A list if URLs
     """
@@ -56,8 +56,8 @@ def scan(nhosts):
     return ["http://{}".format(ip) for ip in results if ip]
 
 def main():
-    """  
-    This function puts everything together    
+    """
+    This function puts everything together
     :returns: None
     """
     if not len(sys.argv) >= 2:
