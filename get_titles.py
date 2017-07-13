@@ -4,6 +4,7 @@
 
 import os
 import sys
+
 import lxml.html
 
 
@@ -39,7 +40,7 @@ def scan(nhosts):
 
 def main():
     """ Run the scan."""
-    if not len(sys.argv) >= 2:
+    if len(sys.argv) < 2:
         print 'You forgot to tell me how many hosts to check'
         sys.exit(0)
     for url in scan(sys.argv[1]):
